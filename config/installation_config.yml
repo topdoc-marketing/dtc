@@ -5,7 +5,7 @@
 - name: LOGO_THUMBNAIL
   value: '/brand-assets/logo_thumbnail.svg'
 - name: LOGO
-  value: '/brand-assets/logo.svg'
+  value: 'https://secureservercdn.net/192.169.221.188/dgv.4d4.myftpupload.com/wp-content/uploads/2017/05/tdm-logo-web.png'
 - name: BRAND_URL
   value: 'https://www.topdoc.co'
 - name: WIDGET_BRAND_URL
