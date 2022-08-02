@@ -24,7 +24,7 @@ class Integrations::Facebook::MessageCreator
   def agent_message_via_echo?
     # TODO : check and remove send_from_chatwoot_app if not working
     response.echo? && !response.sent_from_chatwoot_app?
-    # this means that it is an agent message from page, but not sent from chatwoot.
+    # this means that it is an agent message from page, but not sent from TopDoc Chat.
     # User can send from fb page directly on mobile / web messenger, so this case should be handled as agent message
   end
 
