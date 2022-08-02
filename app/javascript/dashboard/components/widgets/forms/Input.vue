@@ -1,0 +1,65 @@
+<template>
+  <label>
+    <span v-if="label">{{ label }}</span>
+    <input
+      :value="value"
+      :type="type"
+      :placeholder="placeholder"
+      :readonly="readonly"
+      :style="styles"
+      @input="onChange"
+      @blur="onBlur"
+    />
+    <p v-if="helpText" class="help-text" />
+    <span v-if="error" class="message">
+      {{ error }}
+    </span>
+  </label>
+</template>
+
+<script>
+export default {
+  props: {
+    label: {
+      type: String,
+      default: '',
+    },
+    value: {
+      type: [String, Number],
+      default: '',
+    },
+    type: {
+      type: String,
+      default: 'text',
+    },
+    placeholder: {
+      type: String,
+      default: '',
+    },
+    helpText: {
+      type: String,
+      default: '',
+    },
+    error: {
+      type: String,
+      default: '',
+    },
+    readonly: {
+      type: Boolean,
+      deafaut: false,
+    },
+    styles: {
+      type: Object,
+      default: () => {},
+    },
+  },
+  methods: {
+    onChange(e) {
+      this.$emit('input', e.target.value);
+    },
+    onBlur(e) {
+      this.$emit('blur', e.target.value);
+    },
+  },
+};
+</script>
