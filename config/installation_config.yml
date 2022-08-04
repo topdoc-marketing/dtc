@@ -2,22 +2,22 @@
 # which means the particular config will be locked
 - name: INSTALLATION_NAME
   value: 'TopDoc Chat'
-  locked: false
+  locked: true
 - name: LOGO_THUMBNAIL
-  value: '/brand-assets/logo_thumbnail.svg'
+  value: 'https://www.topdoc.co/brand-assets/logo_thumbnail.svg'
 - name: LOGO
-  locked: false
-  value: '/brand-assets/logo.svg'
-  locked: false
+  locked: true
+  value: 'https://www.topdoc.co/brand-assets/logo.svg'
+  locked: true
 - name: BRAND_URL
   value: 'https://www.topdoc.co'
-  locked: false
+  locked: true
 - name: WIDGET_BRAND_URL
   value: 'https://www.topdoc.co'
-  locked: false
+  locked: true
 - name: BRAND_NAME
   value: 'TopDoc Chat'
-  locked: false
+  locked: true
 - name: TERMS_URL
   value: 'https://www.chatwoot.com/terms-of-service'
 - name: PRIVACY_URL
