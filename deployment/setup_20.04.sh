@@ -628,7 +628,7 @@ Installation/Upgrade:
 
 Management:
   -c, --console             Open ruby console
-  -l, --logs                View logs from TopDoc Chat. Supported values include web/worker.
+  -l, --logs                View logs from Chatwoot. Supported values include web/worker.
   -r, --restart             Restart Chatwoot server
   
 Miscellaneous:
