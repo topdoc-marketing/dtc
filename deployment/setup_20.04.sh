@@ -376,12 +376,12 @@ EOF
 #   None
 ##############################################################################
 function configure_systemd_services() {
-  cp /home/chatwoot/chatwoot/deployment/chatwoot-web.1.service /etc/systemd/system/chatwoot-web.1.service
-  cp /home/chatwoot/chatwoot/deployment/chatwoot-worker.1.service /etc/systemd/system/chatwoot-worker.1.service
-  cp /home/chatwoot/chatwoot/deployment/chatwoot.target /etc/systemd/system/chatwoot.target
+  cp /home/topdoc-marketing/dtc/deployment/chatwoot-web.1.service /etc/systemd/system/chatwoot-web.1.service
+  cp /home/topdoc-marketing/dtc/deployment/chatwoot-worker.1.service /etc/systemd/system/chatwoot-worker.1.service
+  cp /home/topdoc-marketing/dtc/deployment/chatwoot.target /etc/systemd/system/chatwoot.target
 
-  cp /home/chatwoot/chatwoot/deployment/chatwoot /etc/sudoers.d/chatwoot
-  cp /home/chatwoot/chatwoot/deployment/setup_20.04.sh /usr/local/bin/cwctl
+  cp /home/topdoc-marketing/dtc/deployment/chatwoot /etc/sudoers.d/chatwoot
+  cp /home/topdoc-marketing/dtc/deployment/setup_20.04.sh /usr/local/bin/cwctl
   chmod +x /usr/local/bin/cwctl
 
   systemctl enable chatwoot.target
@@ -407,7 +407,7 @@ function setup_ssl() {
     echo "debug: letsencrypt email: $le_email"
   fi
   curl https://ssl-config.mozilla.org/ffdhe4096.txt >> /etc/ssl/dhparam
-  wget https://raw.githubusercontent.com/chatwoot/chatwoot/develop/deployment/nginx_chatwoot.conf
+  wget https://raw.githubusercontent.com/topdoc-marketing/dtc/develop/deployment/nginx_chatwoot.conf
   cp nginx_chatwoot.conf /etc/nginx/sites-available/nginx_chatwoot.conf
   certbot certonly --non-interactive --agree-tos --nginx -m "$le_email" -d "$domain_name"
   sed -i "s/chatwoot.domain.com/$domain_name/g" /etc/nginx/sites-available/nginx_chatwoot.conf
@@ -639,7 +639,7 @@ Miscellaneous:
 Exit status:
 Returns 0 if successful; non-zero otherwise.
 
-Report bugs at https://github.com/chatwoot/chatwoot/issues
+Report bugs at https://github.com/topdoc-marketing/dtc/issues
 Get help, https://chatwoot.com/community?utm_source=cwctl
 
 EOF
@@ -726,11 +726,11 @@ function upgrade() {
 EOF
 
   # Copy the updated targets
-  cp /home/chatwoot/chatwoot/deployment/chatwoot-web.1.service /etc/systemd/system/chatwoot-web.1.service
-  cp /home/chatwoot/chatwoot/deployment/chatwoot-worker.1.service /etc/systemd/system/chatwoot-worker.1.service
-  cp /home/chatwoot/chatwoot/deployment/chatwoot.target /etc/systemd/system/chatwoot.target
+  cp /home/topdoc-marketing/dtc/deployment/chatwoot-web.1.service /etc/systemd/system/chatwoot-web.1.service
+  cp /home/topdoc-marketing/dtc/deployment/chatwoot-worker.1.service /etc/systemd/system/chatwoot-worker.1.service
+  cp /home/topdoc-marketing/dtc/deployment/chatwoot.target /etc/systemd/system/chatwoot.target
 
-  cp /home/chatwoot/chatwoot/deployment/chatwoot /etc/sudoers.d/chatwoot
+  cp /home/topdoc-marketing/dtc/deployment/chatwoot /etc/sudoers.d/chatwoot
   # TODO:(@vn) handle cwctl updates
 
   systemctl daemon-reload
